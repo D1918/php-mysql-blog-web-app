@@ -4,41 +4,26 @@ namespace App\Controllers;
 
 use Lib\View;
 
-use App\Models\ArticleModel;
-use App\Models\CategoryModel;
+use App\Services\HomeService;
 
 class HomeController
 {
     private View $view;
-    private CategoryModel $categoryModel;
-    private ArticleModel $articleModel;
+    private HomeService $homeService;
 
     public function __construct()
     {
         $this->view = new View();
-        $this->categoryModel = new CategoryModel();
-        $this->articleModel = new ArticleModel();
+        $this->homeService = new HomeService();
     }
 
     public function index()
     {
-        $categories = $this->categoryModel->getAll();
-
-        $data = [];
-
-        foreach ($categories as $category) {
-            $data[] = [
-                "category" => $category,
-                "articles" => $this->articleModel->getLatestByCategory(
-                    $category["id"],
-                    3
-                ),
-            ];
-        }
+        $sections = $this->homeService->getHomeSections(3);
 
         $this->view->assign("pageTitle", "Categories");
         $this->view->assign("styles", ["home"]);
-        $this->view->assign("sections", $data);
+        $this->view->assign("sections", $sections);
 
         $this->view->render("pages/home/index.tpl");
     }
