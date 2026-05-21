@@ -18,10 +18,10 @@
     </head>
     
     <body>
-        {include file="ui/navbar.tpl"}
-    
+        {include file="ui/layout/navbar.tpl"}
+	
         {block name="content"}{/block}
-    
-        {include file="ui/footer.tpl"}
+	
+        {include file="ui/layout/footer.tpl"}
     </body>
 </html>

@@ -1,4 +1,4 @@
-{extends file="ui/layout.tpl"}
+{extends file="ui/layout/index.tpl"}
 
 {block name="content"}
     <div class="container">
@@ -19,31 +19,9 @@
                 </div>
 
                 <div class="articles-grid">
-                    {foreach $section.articles as $article}
-                        <article class="article-card">
-                            <a class="article-link" href="/article/{$article.slug}">
-
-                                {if $article.image}
-                                    <div class="article-image">
-                                        <img src="{$article.image}" alt="{$article.title}">
-                                    </div>
-                                {/if}
-
-                                <div class="article-body">				    
-                                    <h3>
-                                        {$article.title}
-                                    </h3>
-
-				    <p>{$article.created_at|date_format:"%B %e %Y"}</p>
-                                    <p>{$article.excerpt|truncate:120}</p>
-
-                                    <div class="meta">
-                                        {$article.views} views
-                                    </div>
-                                </div>
-                            </a>
-                        </article>
-                    {/foreach}
+		    {foreach $section.articles as $article}
+			{include file="ui/components/article-card.tpl"}
+		    {/foreach}
                 </div>
             </section>
         {/foreach}
