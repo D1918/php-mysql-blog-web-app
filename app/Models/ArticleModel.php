@@ -92,4 +92,26 @@ class ArticleModel
 
         return (int) $statement->fetch()["cnt"];
     }
+
+    public function getSimilarArticles(int $articleId, int $limit = 3): array
+    {
+        $statement = $this->db->prepare("
+        SELECT a.*
+        FROM articles a
+        JOIN article_category ac1 ON a.id = ac1.article_id
+        WHERE ac1.category_id IN (
+            SELECT category_id
+            FROM article_category
+            WHERE article_id = ?
+        )
+        AND a.id != ?
+        GROUP BY a.id
+        ORDER BY a.created_at DESC
+        LIMIT $limit
+    ");
+
+        $statement->execute([$articleId, $articleId]);
+
+        return $statement->fetchAll();
+    }
 }

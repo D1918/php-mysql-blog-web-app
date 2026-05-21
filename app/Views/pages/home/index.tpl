@@ -1,8 +1,7 @@
-{extends file="../../ui/layout.tpl"}
+{extends file="ui/layout.tpl"}
 
 {block name="content"}
     <div class="container">
-
 	<h1>Geeks Rule!</h1>
 
         {foreach $sections as $section}
@@ -20,7 +19,6 @@
                 </div>
 
                 <div class="articles-grid">
-
                     {foreach $section.articles as $article}
                         <article class="article-card">
                             <a class="article-link" href="/article/{$article.slug}">
@@ -31,29 +29,23 @@
                                     </div>
                                 {/if}
 
-                                <div class="article-body">
-				    <p>{$article.created_at|date_format:"%B %e %Y"}</p>
-				    
+                                <div class="article-body">				    
                                     <h3>
                                         {$article.title}
                                     </h3>
 
+				    <p>{$article.created_at|date_format:"%B %e %Y"}</p>
                                     <p>{$article.excerpt|truncate:120}</p>
 
                                     <div class="meta">
                                         {$article.views} views
                                     </div>
                                 </div>
-
                             </a>
-
                         </article>
                     {/foreach}
-
                 </div>
-
             </section>
         {/foreach}
-
     </div>
 {/block}
