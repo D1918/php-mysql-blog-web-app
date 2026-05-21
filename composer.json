@@ -1,0 +1,22 @@
+{
+  "name": "dos1918/blog-web-app",
+  "license": "GPL-3.0",
+  "type": "project",
+  "description": "Blog App built on custom mcv library",
+  "require": {
+    "php": "^8.4",
+    "smarty/smarty": "^5.0",
+    "vlucas/phpdotenv": "^5.6",
+    "scssphp/scssphp": "^2.1"
+  },
+  "scripts": {
+    "scss:build": "php scripts/build-assets.php",
+    "scss:watch": "bash scripts/watch-scss.sh"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "Lib\\": "lib/"
+    }
+  }
+}
