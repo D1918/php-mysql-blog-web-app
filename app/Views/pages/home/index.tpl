@@ -3,7 +3,7 @@
 {block name="content"}
     <div class="container">
 
-        <h1 class="page-title">Blog</h1>
+	<h1>Geeks Rule!</h1>
 
         {foreach $sections as $section}
             <section class="category-section">
@@ -23,7 +23,6 @@
 
                     {foreach $section.articles as $article}
                         <article class="article-card">
-
                             <a class="article-link" href="/article/{$article.slug}">
 
                                 {if $article.image}
@@ -33,6 +32,8 @@
                                 {/if}
 
                                 <div class="article-body">
+				    <p>{$article.created_at|date_format:"%B %e %Y"}</p>
+				    
                                     <h3>
                                         {$article.title}
                                     </h3>

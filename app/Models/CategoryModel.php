@@ -18,4 +18,15 @@ class CategoryModel
     {
         return $this->db->query("SELECT * FROM categories")->fetchAll();
     }
+
+    public function getBySlug(string $slug): array|false
+    {
+        $statement = $this->db->prepare("
+        SELECT * FROM categories WHERE slug = ?
+    ");
+
+        $statement->execute([$slug]);
+
+        return $statement->fetch();
+    }
 }

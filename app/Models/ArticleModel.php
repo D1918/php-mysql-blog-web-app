@@ -53,4 +53,43 @@ class ArticleModel
 
         $statement->execute([$id]);
     }
+
+    public function getByCategory(
+        int $categoryId,
+        int $limit,
+        int $offset,
+        string $sort
+    ): array {
+        $orderBy = match ($sort) {
+            "views" => "a.views DESC",
+            default => "a.created_at DESC",
+        };
+
+        $statement = $this->db->prepare("
+        SELECT a.*
+        FROM articles a
+        JOIN article_category ac ON a.id = ac.article_id
+        WHERE ac.category_id = ?
+        ORDER BY $orderBy
+        LIMIT $limit OFFSET $offset
+    ");
+
+        $statement->execute([$categoryId]);
+
+        return $statement->fetchAll();
+    }
+
+    public function countByCategory(int $categoryId): int
+    {
+        $statement = $this->db->prepare("
+        SELECT COUNT(*) as cnt
+        FROM articles a
+        JOIN article_category ac ON a.id = ac.article_id
+        WHERE ac.category_id = ?
+    ");
+
+        $statement->execute([$categoryId]);
+
+        return (int) $statement->fetch()["cnt"];
+    }
 }

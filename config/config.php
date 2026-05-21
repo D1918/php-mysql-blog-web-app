@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\CategoryController;
 use App\Controllers\HomeController;
 
 return [
@@ -19,6 +20,11 @@ return [
             "method" => "GET",
             "path" => "/",
             "action" => [HomeController::class, "index"],
+        ],
+        [
+            "method" => "GET",
+            "path" => "/category/{slug}",
+            "action" => [CategoryController::class, "index"],
         ],
     ],
 ];
