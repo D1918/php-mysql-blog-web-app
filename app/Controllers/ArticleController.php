@@ -26,6 +26,10 @@ class ArticleController
             return;
         }
 
+        $this->view->assign(
+            "pageTitle",
+            $data["article"]["title"] ?? "Article"
+        );
         $this->view->assign("article", $data["article"]);
         $this->view->assign("similar", $data["similar"]);
         $this->view->assign("styles", ["category"]);

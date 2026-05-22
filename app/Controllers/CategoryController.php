@@ -30,8 +30,12 @@ class CategoryController
             return;
         }
 
+        $pageTitle =
+            mb_convert_case($slug, MB_CASE_TITLE, "UTF-8") . " Articles" ??
+            "Articles";
+
+        $this->view->assign("pageTitle", $pageTitle);
         $this->view->assign("styles", ["category"]);
-        $this->view->assign("pageTitle", $data["category"]["name"]);
         $this->view->assign("category", $data["category"]);
         $this->view->assign("articles", $data["articles"]);
         $this->view->assign("pagination", $data["pagination"]);

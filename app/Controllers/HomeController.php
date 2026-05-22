@@ -21,7 +21,7 @@ class HomeController
     {
         $sections = $this->homeService->getHomeSections(3);
 
-        $this->view->assign("pageTitle", "Categories");
+        $this->view->assign("pageTitle", "Home");
         $this->view->assign("styles", ["home"]);
         $this->view->assign("sections", $sections);
 
