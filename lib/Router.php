@@ -32,7 +32,7 @@ class Router
         ];
     }
 
-    public static function dispatch()
+    public static function dispatch(): void
     {
         $uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
         $method = $_SERVER["REQUEST_METHOD"];
@@ -48,10 +48,12 @@ class Router
 
                     $controller = new $class();
 
-                    return $controller->$action(...$matches);
+                    $controller->$action(...$matches);
+                    return;
                 }
 
-                return $callback(...$matches);
+                $callback(...$matches);
+                return;
             }
         }
 

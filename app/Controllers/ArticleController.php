@@ -16,7 +16,7 @@ class ArticleController
         $this->articleService = new ArticleService();
     }
 
-    public function index(string $slug)
+    public function index(string $slug): void
     {
         $data = $this->articleService->getArticlePageData($slug);
 

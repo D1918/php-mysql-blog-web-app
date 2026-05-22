@@ -17,7 +17,7 @@ class CategoryController
         $this->categoryService = new CategoryService();
     }
 
-    public function index(string $slug)
+    public function index(string $slug): void
     {
         $page = max(1, (int) ($_GET["page"] ?? 1));
         $sort = $_GET["sort"] ?? "date";

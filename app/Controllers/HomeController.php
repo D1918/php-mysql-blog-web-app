@@ -17,7 +17,7 @@ class HomeController
         $this->homeService = new HomeService();
     }
 
-    public function index()
+    public function index(): void
     {
         $sections = $this->homeService->getHomeSections(3);
 

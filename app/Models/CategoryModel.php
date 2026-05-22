@@ -15,7 +15,7 @@ class CategoryModel
         $this->db = Database::getConnection();
     }
 
-    public function getAll()
+    public function getAll(): array
     {
         return $this->db
             ->query(
