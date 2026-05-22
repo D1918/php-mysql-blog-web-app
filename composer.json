@@ -1,6 +1,6 @@
 {
   "name": "dos1918/blog-web-app",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "type": "project",
   "description": "Blog App built on custom mcv library",
   "require": {
