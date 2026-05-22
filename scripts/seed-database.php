@@ -70,11 +70,9 @@ $articleStatement = $pdo->prepare("
         content,
         image,
         views,
-        status,
-        published_at,
         created_at
     )
-    VALUES (?, ?, ?, ?, ?, ?, 'published', NOW(), NOW())
+    VALUES (?, ?, ?, ?, ?, ?, NOW())
 ");
 
 $linkStatement = $pdo->prepare("

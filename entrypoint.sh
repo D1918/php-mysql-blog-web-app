@@ -40,7 +40,7 @@ COUNT=$(mysql -h"$DB_HOST" -u"$DB_USER" -p"$DB_PASS" "$DB_NAME" -se \
 	"SELECT COUNT(*) FROM categories;" 2>/dev/null || echo 0)
 
 if [ "$COUNT" -eq 0 ]; then
-	echo "No data found — running seed..."
+	echo "No data found —  seeding database..."
 	php /var/www/html/scripts/seed-database.php
 else
 	echo "Database already seeded - skipping..."

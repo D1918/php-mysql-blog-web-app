@@ -21,15 +21,11 @@ CREATE TABLE articles (
     image VARCHAR(512),
     views INT DEFAULT 0,
 
-    status ENUM('draft', 'published') DEFAULT 'published',
-
-    published_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
     INDEX idx_articles_created (created_at),
-    INDEX idx_articles_views (views),
-    INDEX idx_articles_published (published_at)
+    INDEX idx_articles_views (views)
 );
 
 CREATE TABLE article_category (
