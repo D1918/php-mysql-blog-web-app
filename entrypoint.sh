@@ -2,6 +2,11 @@
 
 set -e
 
+if [ ! -d "/var/www/html/vendor" ]; then
+	echo "Installing PHP dependencies..."
+	composer install --optimize-autoloader
+fi
+
 echo "Preparing Smarty directories..."
 
 mkdir -p /var/www/html/storage/smarty/compile
@@ -16,7 +21,7 @@ echo "Building css assets..."
 
 php /var/www/html/scripts/build-assets.php
 
-chmod +x scripts/watch-scss.sh
+chmod +x /var/www/html/scripts/watch-scss.sh
 
 echo "Starting scss watcher..."
 

@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Lib\Database;
 use PDO;
+
+use Lib\Database;
 
 class CategoryModel
 {
@@ -16,13 +17,17 @@ class CategoryModel
 
     public function getAll()
     {
-        return $this->db->query("SELECT * FROM categories")->fetchAll();
+        return $this->db
+            ->query(
+                "SELECT id, name, slug, description, created_at FROM categories"
+            )
+            ->fetchAll();
     }
 
     public function getBySlug(string $slug): array|false
     {
         $statement = $this->db->prepare("
-        SELECT * FROM categories WHERE slug = ?
+        SELECT id, name, slug, description, created_at FROM categories WHERE slug = ?
     ");
 
         $statement->execute([$slug]);

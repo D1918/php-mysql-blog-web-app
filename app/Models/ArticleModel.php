@@ -17,7 +17,7 @@ class ArticleModel
     public function getLatestByCategory(int $categoryId, int $limit = 3): array
     {
         $statement = $this->db->prepare("
-        SELECT a.*
+        SELECT a.id, a.title, a.slug, a.image, a.excerpt
         FROM articles a
         JOIN article_category ac ON a.id = ac.article_id
         WHERE ac.category_id = ?
@@ -66,7 +66,7 @@ class ArticleModel
         };
 
         $statement = $this->db->prepare("
-        SELECT a.*
+        SELECT a.id, a.title, a.slug, a.excerpt, a.image, a.views, a.created_at
         FROM articles a
         JOIN article_category ac ON a.id = ac.article_id
         WHERE ac.category_id = ?
@@ -96,7 +96,7 @@ class ArticleModel
     public function getSimilarArticles(int $articleId, int $limit = 3): array
     {
         $statement = $this->db->prepare("
-        SELECT a.*
+        SELECT a.id, a.title, a.slug, a.image, a.created_at
         FROM articles a
         JOIN article_category ac1 ON a.id = ac1.article_id
         WHERE ac1.category_id IN (
