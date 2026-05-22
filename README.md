@@ -1,6 +1,6 @@
 📝 PHP MySQL Blog Web App
 
-PHP web app powered by a custom MVC architecture, Smarty templating, MySQL and Docker.
+PHP web app powered by a custom MVC architecture, Smarty templating, Sass, MySQL and Docker.
 
 ⚙️ Installation
 
