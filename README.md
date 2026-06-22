@@ -1,14 +1,14 @@
-📝 PHP MySQL Blog Web App - Test Task Implementation
+### 📝 PHP MySQL Blog Web App - Test Task Implementation
 
 PHP web app powered by a custom MVC architecture, Smarty templating, Sass, MySQL and Docker.
 
-⚙️ Installation
+### ⚙️ Installation
 
 1. cp .env.example .env
 
 2. docker compose -f docker-compose.dev.yml up --build
 
-📌 Test Task Requirements
+### 📌 Test Task Requirements
 
 You are required to develop a simple but fully functional website in pure PHP (without frameworks) using MySQL and the Smarty templating engine. The site should implement blog functionality with categories and posts.
 
