@@ -23,12 +23,12 @@ You are required to develop a simple but fully functional website in pure PHP (w
 
 #### Data structure:
 
-***Category***:
+##### Category:
 
 * Name
 * Description
 
-***Article:***
+##### Article:
 
 * Image
 * Title
@@ -41,18 +41,18 @@ You are required to develop a simple but fully functional website in pure PHP (w
 
 #### Required pages:
 
-***Home page:***
+##### Home page:
 
 * Display each category that contains articles and show the 3 latest posts (by publication date)
 * Add a “All articles” button for each category
 
-***Category page:***
+##### Category page:
 
 * Display category name, description, and list of articles
 * Implement article sorting (by number of views, by publication date)
 * Implement pagination
 
-***Article page:***
+##### Article page:
 
 * Display all information about the article
 * Show a block of 3 related articles
