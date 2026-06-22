@@ -23,12 +23,12 @@ You are required to develop a simple but fully functional website in pure PHP (w
 
 #### Data structure:
 
-##### Category:
+**Category:**
 
 * Name
 * Description
 
-##### Article:
+**Article:**
 
 * Image
 * Title
