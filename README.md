@@ -88,6 +88,7 @@ Along with the submission, you must indicate whether you used AI during developm
 
 It is also appreciated if commits are made step by step during development so the progress and logic of implementation can be reviewed.
 
-📄 License
+
+## 📄 License
 
 This project is open-source and available under the MIT License.
