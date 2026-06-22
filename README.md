@@ -12,7 +12,7 @@ PHP web app powered by a custom MVC architecture, Smarty templating, Sass, MySQL
 
 You are required to develop a simple but fully functional website in pure PHP (without frameworks) using MySQL and the Smarty templating engine. The site should implement blog functionality with categories and posts.
 
-### Technology stack:
+#### Technology stack:
 
 * PHP 8.1+
 * Smarty templating engine
@@ -21,7 +21,7 @@ You are required to develop a simple but fully functional website in pure PHP (w
 
 ---
 
-### Data structure:
+#### Data structure:
 
 **Category:**
 
@@ -39,7 +39,7 @@ You are required to develop a simple but fully functional website in pure PHP (w
 
 ---
 
-### Required pages:
+#### Required pages:
 
 **Home page:**
 
@@ -59,13 +59,13 @@ You are required to develop a simple but fully functional website in pure PHP (w
 
 ---
 
-### Additional functionality:
+#### Additional functionality:
 
 * Implement seeding functionality for categories and articles
 
 ---
 
-### What will be evaluated:
+#### What will be evaluated:
 
 * Simplicity, readability, and structure of the code
 * Project structure
@@ -75,7 +75,7 @@ You are required to develop a simple but fully functional website in pure PHP (w
 
 ---
 
-### Bonus points:
+#### Bonus points:
 
 * Use of SCSS for styling
 * Docker environment
